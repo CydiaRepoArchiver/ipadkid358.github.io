@@ -22,4 +22,5 @@ If you're poking around this repo, I'll quickly explain what everything does:
 - ***[anything]****.html** - previously mentioned front end site
 - **packageMe** - script to run dpkg-scanpackges, put that packages file in the correct format, and push everything out to this GitHub repo
 - **push** - similar script, just doesn't deal with the packages 
+- **rich.png** - mini picture for some rich links
 - **readMe.md** - this readMe, hopefully
