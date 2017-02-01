@@ -10,7 +10,6 @@ If you're poking around this repo, I'll quickly explain what everything does:
 
 - **assests** - this has everything that allows my [front end site](https://ipadkid358.github.io/) to look nice
 - **debs** - this folder contains all the Debian package on my Cydia repo
-- **js** - lets Cydia know that this is an acceptable Cydia repository 
 - **CydiaIcon.png** - icon that shows up in Cydia under Sources and at the bottom of packages hosted on my repo
 - **Packages.bz2** - this is a specially compressed file for Cydia to decide what packages should be available from my repo
 - **Release** - some more stuff for Cydia. Under Sources, the repo name is displayed. At the bottom of packages hosted on my repo, another name and a description is displayed. 
