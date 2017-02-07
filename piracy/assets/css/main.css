@@ -130,7 +130,7 @@
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
-		line-height: 2;
+		line-height: 1;
 		letter-spacing: 0.2em;
 		text-transform: uppercase;
 	}
@@ -147,7 +147,7 @@
 
 			body, input, select, textarea {
 				font-size: 10pt;
-				line-height: 1.75;
+				line-height: 1;
 			}
 
 		}
@@ -186,7 +186,7 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #313f47;
-		line-height: 1.5;
+		line-height: 1;
 		margin: 0 0 0.75em 0;
 	}
 
@@ -325,14 +325,14 @@
 		.select-wrapper:before {
 			color: #c8cccf;
 			display: block;
-			height: 1.75em;
-			line-height: 1.75em;
+			height: 2.75em;
+			line-height: 1;
 			pointer-events: none;
 			position: absolute;
 			right: 0;
 			text-align: center;
 			top: 0;
-			width: 1.75em;
+			width: 2.75em;
 		}
 
 		.select-wrapper select::-ms-expand {
@@ -395,7 +395,7 @@
 				display: inline-block;
 				height: 1.65em;
 				left: 0;
-				line-height: 1.58125em;
+				line-height: 1;
 				position: absolute;
 				text-align: center;
 				top: 0.15em;
@@ -702,13 +702,13 @@
 
 	#main {
 		position: relative;
-		max-width: 70%;
-		min-width: 24em;
+		max-width: 100%;
+		min-width: 27em;
 		padding: 4.5em 3em 3em 3em ;
-		background: #ffffff;
-		border-radius: 6px;
+		background: rgba(255, 255, 255, 0.65);
+		border-radius: 100%;
 		cursor: default;
-		opacity: 0.9;
+		opacity: 1;
 		text-align: center;
 		-moz-transform-origin: 50% 50%;
 		-webkit-transform-origin: 50% 50%;
@@ -734,7 +734,7 @@
 				display: block;
 				margin: 0 auto;
 				border-radius: 100%;
-				box-shadow: 0 0 0 1.5em #ffffff;
+				opacity: 1;
 			}
 
 			#main .avatar:before {
@@ -759,7 +759,7 @@
 
 				#main .avatar:before {
 					left: -2em;
-					width: calc(100% + 4em);
+					width: calc(100% + 4em); opacity: 0;
 				}
 
 		}
@@ -824,13 +824,13 @@
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
 		flex-direction: column;
-		-moz-perspective: 100px;
-		-webkit-perspective: 100px;
-		-ms-perspective: 100px;
-		perspective: 25px;
+		-moz-perspective: 1000px;
+		-webkit-perspective: 1000px;
+		-ms-perspective: 1000px;
+		perspective: 1000px;
 		position: relative;
-		min-height: 80%;
-		padding: 1em;
+		min-height: 100%;
+		padding: 1.5em;
 		z-index: 2;
 	}
 
@@ -845,9 +845,12 @@
 
 		@media screen and (max-width: 360px) {
 
+			#wrapper {
+				padding: 0.75em;
+			}
 
 		}
 
 		body.is-ie #wrapper {
-			height: 80%;
+			height: 100%;
 		}
