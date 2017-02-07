@@ -18,7 +18,7 @@ If you're poking around this repo, I'll quickly explain what everything does:
 - **dpkg-gettext.pl** - used by dpkg-scanpackages 
 - **dpkg-scanpackages** - script to create Packages which is a pain to do by hand, even for just one package 
 - **favicon.ico** - picture used for bookmarks and tab thumbnails
-- ***[anything]****.html** - previously mentioned front end site
+- ***[anything]*****.html** - previously mentioned front end site
 - **packageMe** - script to run dpkg-scanpackges, put that packages file in the correct format, and push everything out to this GitHub repo
 - **push** - similar script, just doesn't deal with the packages 
 - **rich.png** - mini picture for some rich links
