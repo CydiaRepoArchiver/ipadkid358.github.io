@@ -2,7 +2,7 @@
 
 This is home to my Cydia repository as well as my main site. 
 
-If you have any questions, feel free to [reach out](https://ipadkid358.github.io/#contact) in whatever way's convenient 
+If you have any questions, feel free to [reach out](https://ipadkid358.github.io/contact.html) in whatever way's convenient 
 
 _____
 
@@ -19,7 +19,6 @@ If you're poking around this repo, I'll quickly explain what everything does:
 - **dpkg-scanpackages** - script to create Packages which is a pain to do by hand, even for just one package 
 - **favicon.ico** - picture used for bookmarks and tab thumbnails
 - ***[anything]*****.html** - previously mentioned front end site
-- **packageMe** - script to run dpkg-scanpackges, put that packages file in the correct format, and push everything out to this GitHub repo
-- **push** - similar script, just doesn't deal with the packages 
+- **push** - script to run dpkg-scanpackges, put that packages file in the correct format, and push everything out to this GitHub repo
 - **rich.png** - mini picture for some rich links
 - **readMe.md** - this readMe, hopefully
