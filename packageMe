@@ -3,13 +3,11 @@
 cd /var/mobile/ipadkid358/piracy;
 rm Packages.bz2;
 ./dpkg-scanpackages debs /dev/null > Packages;
-bzip2 -z Packages > hideMe.txt; 
-rm hideMe.txt;
+bzip2 -z Packages;
 cd /var/mobile/ipadkid358;
 rm Packages.bz2;
 ./dpkg-scanpackages debs /dev/null > Packages;
-bzip2 -z Packages!> hideMe.txt; 
-rm hideMe.txt;
+bzip2 -z Packages;
 git add --all;
 git commit -m "Update";
 git push 
