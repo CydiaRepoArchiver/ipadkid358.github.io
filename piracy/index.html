@@ -7,16 +7,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <script type="text/javascript">
-    function detectBrowser(){
-        var ios= navigator.platform;
+    function iOS() {
 
-            if ((ios.indexOf("iPhone"))!=-1) {
-              window.location = "index.html";
-            }
-            else {
-                 window.location = "notios.html";
-            }
+  var iDevices = [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ];
+
+  if (!!navigator.platform) {
+    while (iDevices.length) {
+      if (navigator.platform === iDevices.pop()){ return true; }
     }
+  }
+
+  return false;
+}
+
+if(iOS === FALSE){ 
+window.location.replace("notios.html");
+} else { 
+window.location(".");
+}
 </script>
 
 			<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
