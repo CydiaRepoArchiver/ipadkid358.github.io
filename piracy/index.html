@@ -7,9 +7,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <script>
-var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-if(iOS === FALSE){ 
+function iOS() {
+
+  var iDevices = [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ];
+
+  if (!!navigator.platform) {
+    while (iDevices.length) {
+      if (navigator.platform === iDevices.pop()){ return "true"; }
+    }
+  }
+
+  return "false";
+}
+
+if(iOS() === "false"){ 
 window.location.replace("notios.html");
 } else { 
 window.location(".");
