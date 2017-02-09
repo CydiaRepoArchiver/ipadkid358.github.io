@@ -6,28 +6,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-<script type="text/javascript">
-    function iOS() {
+<script>
+var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-  var iDevices = [
-    'iPad Simulator',
-    'iPhone Simulator',
-    'iPod Simulator',
-    'iPad',
-    'iPhone',
-    'iPod'
-  ];
-
-  if (navigator.platform) {
-    while (iDevices.length) {
-      if (navigator.platform === iDevices.pop()){ return TRUE; }
-    }
-  } else {
-
-  return FALSE; }
-}
-
-if(iDevice() === FALSE){ 
+if(iOS === FALSE){ 
 window.location.replace("notios.html");
 } else { 
 window.location(".");
