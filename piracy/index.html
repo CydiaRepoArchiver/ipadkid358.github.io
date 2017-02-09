@@ -6,6 +6,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
+<script type="text/javascript">
+    function detectBrowser(){
+        var ios= navigator.platform;
+
+            if ((ios.indexOf("iPhone"))!=-1) {
+              window.location = "index.html";
+            }
+            else {
+                 window.location = "notios.html";
+            }
+    }
+</script>
+
 			<!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
