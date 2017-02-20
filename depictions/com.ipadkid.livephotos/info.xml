@@ -1,0 +1,32 @@
+<package>
+	<id>com.ipadkid.livephotos</id>
+	<name>Live Photos Enabler</name>
+	<version>0.0.3</version>
+	<compatibility>
+		<firmware>
+			<miniOS>10.0</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+	</dependencies>
+	<descriptionlist>
+		<description>Enable Live Photos on older iOS 10 devices
+		</description>
+	</descriptionlist>
+	<screenshots>
+		<screenshot>
+			<description>Camera view</description>
+			<image>cam.png</image>
+		</screenshot>
+	</screenshots>
+	<changelog>
+		<change>Now much smaller</change>
+	</changelog>
+	<links>
+		<link>
+			<name>ipad_kid home</name>
+			<url>https://ipadkid358.github.io</url>
+		</link>
+	</links>
+</package>

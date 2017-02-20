@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd /var/mobile/repo;
-rm Packages.bz2;
-/var/mobile/repo/dpkg-scanpackages debs /dev/null > Packages;
-bzip2 -z Packages

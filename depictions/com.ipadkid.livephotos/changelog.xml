@@ -1,0 +1,14 @@
+<changelog>
+      <changes>
+		<version>0.0.3</version>
+		<change>Re-written to be much smaller</change>
+	</changes>
+	<changes>
+		<version>0.0.2</version>
+		<change>Enabled Live Photos icon in Photos app</change>
+	</changes>
+	<changes>
+		<version>0.0.1</version>
+		<change>Initial Release</change>
+	</changes>
+</changelog>
