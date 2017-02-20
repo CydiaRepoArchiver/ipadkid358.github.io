@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd /var/mobile/ipadkid358/piracy;
+rm Packages.bz2;
+/var/mobile/ipadkid358/piracy/dpkg-scanpackages debs /dev/null > Packages;
+bzip2 -z Packages;
+cd /var/mobile/ipadkid358;
+rm Packages.bz2;
+/var/mobile/ipadkid358/dpkg-scanpackages debs /dev/null > Packages;
+bzip2 -z Packages;
+cd /var/mobile/ipadkid358;
+git add --all;
+git commit -m "Update";
+git push 
