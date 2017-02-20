@@ -127,8 +127,8 @@
 
 	<div id="packageHeader" class="container" style="hide">
 		<div class="jumbotron">
-			<h2 id="packageName"></h2>
-			<p>an ipad_kid package</p>
+			<h2 align="center" id="packageName"></h2>
+			<p align="center">an ipad_kid package</p>
 		</div>
 	</div>
 
@@ -196,31 +196,10 @@
 				} //render
 			}
 	}
-    $( document ).ready(function() {
-        $.ajax({type: "GET", dataType: "xml",url : ("../repo.xml"),cache: false,
-            success : function(xml){
-				      data_loader_engine(repoContents,xml);
-              setAnchorTargets();
-			      },
-            error: function() {
-              $("#contactInfo").hide();
-              setAnchorTargets();
-            }
-        }); //ajax
-
 
     }); // ready
 
 </script>
-
-<div id="contactInfo">
-	<div class="container">
-		<h5>CONTACT</h5>
-		<ul class="list-group" id="repoFooterLinks">
-		</ul>
-	</div>
-</div>
-
 
 </body>
 </html>
