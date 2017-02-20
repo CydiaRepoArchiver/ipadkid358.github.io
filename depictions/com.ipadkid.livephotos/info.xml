@@ -14,12 +14,6 @@
 		<description>Enable Live Photos on older iOS 10 devices
 		</description>
 	</descriptionlist>
-	<screenshots>
-		<screenshot>
-			<description>Camera view</description>
-			<image>cam.png</image>
-		</screenshot>
-	</screenshots>
 	<changelog>
 		<change>Re-written to be much smaller</change>
 	</changelog>
