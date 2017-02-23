@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 Allow: /sitemap.htm
-Sitemap: https://ipadkid358.github.io/sitemap.htm
+Sitemap: https://ipadkid358.github.io/sitemap.xml
 Disallow: /clash.html
