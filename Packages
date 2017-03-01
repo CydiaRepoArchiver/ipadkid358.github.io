@@ -1,0 +1,166 @@
+Package: com.ipadkid.breddit2
+Version: 0.1
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate
+Conflicts: com.zestlabs.filtrate, com.yourepo.alakazard.breddit2
+Replaces: com.yourepo.alakazard.breddit2
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.breddit2_0.1_iphoneos-arm.deb
+Size: 42742
+MD5sum: c44591ab9cdf1f1d4a74ec8aafa9bae7
+Description: Make the official Reddit app in the App Store better to use. This tweak was originally developed by Alakazard. The source code was given to me, as he'd like to step away from the jailbreak community. I have not touched this tweak at all since he has given it to me. I apologize that some features may not work as Reddit updates their app. I hope to update this app in the feature. Sorry, and thank you.
+Name: Breddit 2
+Author: Alakazard
+
+Package: com.ipadkid.devcommands
+Version: 1.0.1
+Section: Development
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: adv-cmds, apt7, basic-cmds, bootstrap-cmds, bzip2, class-dump, com.ericasadun.utilities, com.innoying.sbutils, com.rpetrich.rocketbootstrap, coreutils, crash-reporter, curl, cycript, developer-cmds, diffutils, diskdev-cmds, file, file-cmds, findutils, gawk, gdb, git, gzip, inetutils, iokittools, jp.ashikase.symbolicate, ldid, less, lsof, make, nano, network-cmds, openssh, p7zip, patch, pincrush, pngcrush, preferenceloader, rsync, shell-cmds, subversion, system-cmds, tar, top, uikittools, unrar, unzip, wget, whois, xar, xml2, zip, syslogcmdline, apt, diffutils, lsof, vim, org.coolstar.llvm-clang, org.coolstar.ld64, org.coolstar.cctools
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.devcommands_1.0.1_iphoneos-arm.deb
+Size: 958
+MD5sum: c16aa5684c8ae2f48f8eff4b87a41b26
+Description: Command line tools. Please install DevRepos before installing this.
+Name: DevCommands
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.devrepos
+Version: 1.1
+Section: Development
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: apt7
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.devrepos_1.1_iphoneos-arm.deb
+Size: 4912
+MD5sum: 5d0873c0ca7948c0756456adb83b9dd6
+Description: Adds repositories for newer command line tools and a few libraries.
+Name: DevRepos
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.ew39iwidget
+Version: 1.0.1
+Section: Widgets
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Pre-Depends: cycript
+Depends: com.matchstic.infostats2
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.ew39iwidget_1.0.1_iphoneos-arm.deb
+Size: 701618
+MD5sum: 2d12e9da5764e10c72e1c040ea6b2831
+Description: EW39 is a music widget. This is a modified version of Evelyn's EW39 iWidget. The song name and artist appears above the dock. Currently only optimized for iPhone 6 resolution. Click the homepage link below to contact me.
+Name: EW39.iWidget
+Author: Evelyn (ev_ynw)
+Homepage: https://ipadkid358.github.io/#contact
+
+Package: com.ipadkid.livephotos
+Version: 0.0.3
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.livephotos_0.0.3_iphoneos-arm.deb
+Size: 3014
+Installed-Size: 72
+MD5sum: 685320019ce702a02d3a581ff9652e5b
+Description: Enable Live Photos on iOS 10 for devices without it
+Name: Live Photos Enabler
+Author: ipad_kid <ipadkid358@gmail.com>
+Depiction: https://ipadkid358.github.io/depictions/?p=com.ipadkid.livephotos
+
+Package: com.ipadkid.localrepo
+Version: 0.0.2
+Section: System
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.localrepo_0.0.2_iphoneos-arm.deb
+Size: 14606
+MD5sum: 9c53be4b7dc01e18ece1a2fa5bf15a75
+Description: Cydia repository on your device! If you need to install a package, and it's not on Cydia, and when you try installing it through Filza, it's not working, you can add it to your local repo. After installing this package, you can take any Debian packages you have, and drop them into /var/mobile/repo/debs then open Terminal and run "repo/pack" without the quotations marks. You can add a repo icon by adding a 120 by 120 image called "CydiaIcon.png" (without quotation marks) to the repo folder. If you have any comments, questions, or concerns, feel free to contact me. I'm listed as both the author and maintainer of this tweak. If email isn't convenient for you, my other points of contact can be found here: https://ipadkid358.github.io/contact.html
+Name: Local Cydia Repo
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.springy
+Version: 1.0-2
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: firmware (>= 10.0), mobilesubstrate, preferenceloader, org.thebigboss.libcolorpicker
+Conflicts: org.thebigboss.respringprogress, com.wizages.bae, com.aditkamath.springy
+Replaces: com.wizages.bae, com.aditkamath.springy
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.springy_1.0-2_iphoneos-arm.deb
+Size: 81738
+MD5sum: b9927a42809bc4fad3cbc731bc4be90c
+Description: Respring animations & customization | Hot fix by ipad_kid to support iOS 10
+Name: Springy 10
+Author: Adit Kamath <adit@aditkamath.com>
+Icon: file:///Library/PreferenceBundles/Springy.bundle/Springy@2x.png
+
+Package: com.ipadkid.livephotos
+Version: 0.0.2
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.livephotos_0.0.2_iphoneos-arm.deb
+Size: 5352
+MD5sum: 523f92c0cf1f80174efe8a0cf39bb478
+Description: Enable Live Photos on iOS 10
+Name: livephotos
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.disablecc
+Version: 0.0.1-1
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.disablecc_0.0.1-1_iphoneos-arm.deb
+Size: 1938
+Installed-Size: 72
+MD5sum: 4320db22b46a7692c55f3f1f181c0896
+Description: Simple tweak to fully disable control center. Requested by u/Lachlan88 of Reddit
+Name: Disable Control Center
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.ssnotifications
+Version: 0.0.2
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: firmware (>= 10.0), com.creatix.switchservice
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.ssnotifications_0.0.2_iphoneos-arm.deb
+Size: 1046
+MD5sum: c0f937abd335f8da3e85c7cba90ee5a2
+Description: Enables Creatix's SwitchServices tweak for the messages app in the pull down notification view. Full creds to Creatix and kx8020
+Name: SwitchServices for Notifications
+Author: Creatix
+
+Package: com.ipadkid.rapzeppelin
+Version: 0.1
+Section: Addons (Zeppelin)
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: com.alexzielenski.zeppelin
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.rapzeppelin_0.1_iphoneos-arm.deb
+Size: 7760
+MD5sum: e3e1939a99934c19fd357678bbf6f36a
+Description: Some rapper logos for Zeppelin. V, Nav, and Palace
+Name: Rappers for Zeppelin
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.noVol
+Version: 0.0.2
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.noVol_0.0.2_iphoneos-arm.deb
+Size: 2652
+Installed-Size: 72
+MD5sum: 659e63669274b1bd359a00faced9202e
+Description: Gets rid of the volume control on the lockscreen when music is playing (and the control center all the time, didn't want to do this, but whatever; hope to fix later)
+Name: No Vol Slider
+Author: ipad_kid <ipadkid358@gmail.com>
+
