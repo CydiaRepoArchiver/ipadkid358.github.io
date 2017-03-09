@@ -1,0 +1,89 @@
+Package: com.clezz.touchr
+Version: 1.0.1-2
+Section: Tweaks
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Depends: mobilesubstrate, preferenceloader, firmware (>= 9.0)
+Architecture: iphoneos-arm
+Filename: debs/com.clezz.touchr_1.0.1-2_iphoneos-arm.deb
+Size: 109694
+Installed-Size: 704
+MD5sum: fd0078c82e902278e62c73eba9ff1d6c
+Description: TouchID gestures / TouchID 手势
+Name: Touchr
+Author: Ma Jun <majun3@gmail.com>
+Sponsor: thebigboss.org <http://thebigboss.org>
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=touchrDp
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=touchrDp
+Icon: file:///Library/PreferenceBundles/TouchrSettings.bundle/Icon-small@2x.png
+
+Package: com.ipadkid.auxo-le
+Version: 1.1.1~beta1
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: firmware (>= 7.0), firmware (<= 9.3.5), mobilesubstrate (>= 0.9.5001), applist (>= 1.5.9), preferenceloader (>= 2.2.2)
+Conflicts: com.rpetrich.sectional, libactivator (<< 1.9.8~beta3), com.a3tweaks.auxo3ios9
+Replaces: com.rpetrich.sectional, com.a3tweaks.auxo3ios9, com.a3tweaks.auxo-le
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.auxo-le_1.1.1~beta1_iphoneos-arm.deb
+Size: 431900
+MD5sum: f5ea386642719dfa1c34d21be5034eb0
+Description: A modern app switcher in control center
+Name: Auxo Legacy Edition
+Author: A3Tweaks <auxole-support@a3tweaks.com>
+Depiction: http://rpetri.ch/cydia/auxo/
+
+Package: com.ipadkid.byarepoicons
+Version: 0.1.1
+Section: BYA Apps
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Replaces: repo.biteyourapple.net.byarepoicons
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.byarepoicons_0.1.1_iphoneos-arm.deb
+Size: 43322
+MD5sum: 6eadad164c7c9c90712ee8b21fde0053
+Description: Nicer BiteYourApple tweak icons
+Name: Better BYA Icons
+Author: ipad_kid <ipadkid358@gmail.com>
+
+Package: com.ipadkid.indigowidgetsandls
+Version: 1.2
+Section: Themes (Addons)
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.indigowidgetsandls_1.2_iphoneos-arm.deb
+Size: 339748
+MD5sum: cf079018b772d46c27b928da227f5df2
+Description: custom widgets and LS for indigo
+Name: indigo widgets and LS
+Author: Novice Designs <NoviceDesigns@outlook.com>
+
+Package: com.ipadkid.platters
+Version: 0.0.2.2
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: mobilesubstrate, firmware (>= 10.0)
+Conflicts: com.cpdigitaldarkroom.catalyst
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.platters_0.0.2.2_iphoneos-arm.deb
+Size: 121642
+MD5sum: 024d0779d41404e6c4eb72f1a9640134
+Description: Supercharged Control Center Pages
+Name: Platters
+Author: CP Digital Darkroom
+
+Package: com.ipadkid.typestatusplus
+Version: 1.1.1
+Section: Tweaks
+Maintainer: ipad_kid <ipadkid358@gmail.com>
+Depends: firmware (>= 9.0), mobilesubstrate, ws.hbang.typestatus2 (>= 2.1.8), com.rpetrich.rocketbootstrap (>= 1.0.4), applist (>= 1.5.9)
+Recommends: firmware (>= 9.2) | libstatusbar (>= 1:0.9.9.0-1), firmware (<< 9.2) | libmoorecon
+Conflicts: ws.ipadkid.typestatusplusproviders, ws.hbang.typestatusplusproviders
+Architecture: iphoneos-arm
+Filename: debs/com.ipadkid.typestatusplus_1.1.1_iphoneos-arm.deb
+Size: 446210
+MD5sum: fbf44b3baf9321d3347e7de31db603d3
+Description: Lots of messaging-related features
+Name: TypeStatus Plus
+Author: HASHBANG Productions <support@hbang.ws>
+Icon: file:///Library/PreferenceBundles/TypeStatusPlus.bundle/icon@2x.png
+
