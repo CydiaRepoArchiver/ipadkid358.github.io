@@ -64,7 +64,7 @@ my %options = (help            => sub { &usage; exit 0; },
 	       version         => \&version,
 	       udeb            => 0,
 	       arch            => undef,
-	       multiversion    => 0,
+	       multiversion    => 50,
 	      );
 
 my $result = GetOptions(\%options,'help|h|?','version','udeb|u!','arch|a=s','multiversion|m!');
