@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 Sitemap: https://ipadkid358.github.io/sitemap.xml
 Disallow: /clash.html
+Disallow: /homework
+Disallow: /homework/*
