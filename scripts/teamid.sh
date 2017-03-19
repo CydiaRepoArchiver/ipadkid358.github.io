@@ -9,9 +9,7 @@ cd "$t"/*.app
 test "$(plutil -key CFBundleName Info.plist)" = "yalu102" && {
 tail -n+4 embedded.mobileprovision > tmp.plist
 test "$(plutil -key ProvisionsAllDevices tmp.plist)" = "" && {
-plutil -key TeamIdentifier tmp.plist > tmp.txt
-tail -n+2 tmp.txt | head -n-1 | sed -e 's/[\t ]//g'
-rm tmp.txt
+plutil -key TeamIdentifier tmp.plist | tail -n+2 | head -n-1 | sed -e 's/[\t ]//g'
 }
 rm tmp.plist
 }
