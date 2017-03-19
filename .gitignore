@@ -1,9 +1,3 @@
 # Images are currently massive, so hopefully I'll figure something soon. In the mean time, I'm just keeping these images locally 
 
 images/*
-pack
-push
-dpkg-gettext.pl
-piracy/dpkg-gettext.pl
-dpkg-scanpackages
-piracy/dpkg-scanpackages
