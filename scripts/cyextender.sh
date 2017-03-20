@@ -7,12 +7,15 @@ if [[ "$(ls /private/var/containers/Bundle/Application/* | grep Extender.app)" !
  echo "delete the app first then reinstall"
  exit 6
 fi
-echo WARNING: THIS INSTALLS APPSYNC, LDID, WGET, CA Certs, App Installer, ZIP, UNZIP IF YOU DO NOT WANT TO INSTALL THESE PLEASE EXIT THIS USING CTRL+C or QUIT THE TERMINAL APP YOU ARE USING!
+tput bold
+sleep 3
+echo WARNING: This installs AppSync, ldid, wget, CA Certs, App Installer, zip, unzip, and Erica Utilities. If you do not want to install these please exit this using CTRL+C or quit the terminal app you are using!
 sleep 10
 echo
-echo Ok, here we go
+echo Ok, here we go!
 if [[ "$(dpkg -l | grep "ca.kirara.gplv3")" == "" ]]; then
 echo You will need to reboot after this finishes. Starting in 5 seconds.
+tput sgr0
 sleep 5
 function checkFail(){
 if [[ "$?" != 0 ]]; then
@@ -52,11 +55,12 @@ fi
 if [[ $RP3 -eq 0 ]]; then
 echo "deb https://bluesymphony.kirara.ca/ ./" >> "/etc/apt/sources.list.d/cyex.list"
 fi
-apt-get update
+echo Quietly updating sources, cause if you have a lot, text is just flying across the screen, and it\'s annoying
+apt-get update 2> /dev/null
 echo Assuming the update worked, if it didn\'t this next command will exit the script.
 echo Reinstalling all dependencies now.
 sleep 2
-apt-get install --reinstall wget ldid org.thebigboss.cacerts com.linusyang.appinst zip unzip net.angelxwind.appsyncunified ca.kirara.gplv3 --force-yes -y
+apt-get install --reinstall wget ldid org.thebigboss.cacerts com.linusyang.appinst zip unzip net.angelxwind.appsyncunified com.ericasadun.utilities ca.kirara.gplv3 --force-yes -y
 checkFail
 echo dependencies are installed
 echo Switching to $TMP directory
