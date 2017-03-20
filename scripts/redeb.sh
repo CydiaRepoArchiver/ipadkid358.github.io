@@ -1,5 +1,7 @@
 #!/bin/bash
 
+test "$1" = "" && { echo Please rerun this script with a package id; }
+test "$1" != "" && {
 mkdir sandbox
 mkdir sandbox/DEBIAN
 ls /var/lib/dpkg/info | grep $1 | grep -v "$1".list | grep -v "$1".md5sums > script.txt
@@ -32,4 +34,5 @@ dpkg-deb -b sandbox "$1".deb > /dev/null
 tput bold
 echo Success!!
 tput sgr0
-rm -rf sandbox
+rm -rf sandbox 
+}

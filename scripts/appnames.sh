@@ -15,7 +15,8 @@ test "$(plutil -key CFBundleDisplayName Info.plist)" != "" && { echo -n "Display
 test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable Info.plist; }
 test "$(plutil -key CFBundleIdentifier Info.plist)" != "" && { 
 echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier Info.plist 
+plutil -key CFBundleIdentifier Info.plist
+test "$1" = "loc" && { echo; echo -n "Core File Location: "; pwd; }
 echo 
 echo ———————
 echo
@@ -36,7 +37,8 @@ test "$(plutil -key CFBundleDisplayName Info.plist)" != "" && { echo -n "Display
 test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable Info.plist; }
 test "$(plutil -key CFBundleIdentifier Info.plist)" != "" && { 
 echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier Info.plist 
+plutil -key CFBundleIdentifier Info.plist
+test "$1" = "loc" && { echo; echo -n "Core File Location: "; pwd; }
 echo 
 echo ———————
 echo
