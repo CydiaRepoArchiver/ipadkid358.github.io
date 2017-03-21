@@ -269,7 +269,7 @@ close(STDOUT) or die sprintf(_g("Couldn't close stdout: %s"), $!)."\n";
 
 my @spuriousover= grep(!defined($packages{$_}),sort keys %overridden);
 
-&writelist(_g("** Packages in archive but missing from override file: **"),
+&writelist(_g("Packages included: "),
            @missingover);
 if (@changedmaint) {
     print(STDERR

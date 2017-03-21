@@ -1,6 +1,11 @@
 #!/bin/bash
 
-cd /var/mobile/ipadkid358;
-git add --all;
-git commit -m "Update";
-git push 
+cd /var/mobile/ipadkid358
+git add --all
+test "$1" = "" && {
+git commit -m "Update"
+}
+test "$1" != "" && {
+git commit -m "$1"
+}
+git push

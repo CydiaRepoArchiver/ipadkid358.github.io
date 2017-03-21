@@ -1,14 +1,24 @@
 #!/bin/bash
 
-cd /var/mobile/ipadkid358/piracy;
-rm Packages.bz2;
-/var/mobile/ipadkid358/piracy/dpkg-scanpackages debs /dev/null > Packages;
-bzip2 -z Packages;
-cd /var/mobile/ipadkid358;
-rm Packages.bz2;
-/var/mobile/ipadkid358/dpkg-scanpackages debs /dev/null > Packages;
-bzip2 -z Packages;
-cd /var/mobile/ipadkid358;
-git add --all;
-git commit -m "Update";
+cd /var/mobile/ipadkid358/piracy
+echo Piracy directory
+rm Packages.bz2
+/var/mobile/ipadkid358/piracy/dpkg-scanpackages debs /dev/null > Packages
+bzip2 -z Packages
+echo
+cd /var/mobile/ipadkid358
+echo Main directory
+rm Packages.bz2
+/var/mobile/ipadkid358/dpkg-scanpackages debs /dev/null > Packages
+bzip2 -z Packages
+echo
+echo Beginning git sequence
+cd /var/mobile/ipadkid358
+git add --all
+test "$1" = "" && {
+git commit -m "Update"
+}
+test "$1" != "" && {
+git commit -m "$1"
+}
 git push
