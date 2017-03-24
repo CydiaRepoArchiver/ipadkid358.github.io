@@ -2,37 +2,24 @@
 
 test "$1" = "" && { echo Please rerun this script with a package id; }
 test "$1" != "" && {
+mkdir redebs
+cd redebs
 mkdir sandbox
 mkdir sandbox/DEBIAN
-ls /var/lib/dpkg/info | grep $1 | grep -v "$1".list | grep -v "$1".md5sums > script.txt
-STR="$(echo -n $1 | wc -c)"
-STRN="$(expr $STR + 2)"
-cut -c $STRN- script.txt > scripts.txt
-rm script.txt
-filecontent=(`cat scripts.txt`)
-for t in "${filecontent[@]}"
+for t in `ls /var/lib/dpkg/info | grep $1 | grep -v "$1".list | grep -v "$1".md5sums | cut -c "$(expr "$(echo -n $1 | wc -c)" + 2)"-`
 do
 cp /var/lib/dpkg/info/$1.$t sandbox/DEBIAN/$t
 done
-rm scripts.txt
-cat /var/lib/dpkg/status > allpacks.txt
-grep -A 20 "Package: $1" allpacks.txt | grep -v Status: > mypack.txt
-rm allpacks.txt
-awk -v RS= '{print > ("control" NR)}' mypack.txt
-mv control1 sandbox/DEBIAN/control
-rm mypack.txt
-rm control*
-cat /var/lib/dpkg/info/"$1".list | tail -n+2 | sed  's .  ' > tmp.txt
-filecontent=(`cat tmp.txt`)
-for t in "${filecontent[@]}"
+cat /var/lib/dpkg/status | grep -A 20 "Package: $1" | grep -v "Status: " | awk '/^$/{exit} {print $0}' > sandbox/DEBIAN/control
+for t in `cat /var/lib/dpkg/info/"$1".list | tail -n+2 | sed  's .  '`
 do
 test -d /$t && mkdir sandbox/$t
 test -f /$t && cp /$t sandbox/$t
 done
-rm tmp.txt
 dpkg-deb -b sandbox "$1".deb > /dev/null
 tput bold
 echo Success!!
+echo The deb should be found in a folder called redebs
 tput sgr0
 rm -rf sandbox 
 }

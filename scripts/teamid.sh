@@ -2,8 +2,7 @@
 
 exec 2> /dev/null
 cd /var/containers/Bundle/Application
-filecontent=( `ls .`)
-for t in "${filecontent[@]}"
+for t in `ls`
 do
 cd "$t"/*.app
 test "$(plutil -key CFBundleName Info.plist)" = "yalu102" && {

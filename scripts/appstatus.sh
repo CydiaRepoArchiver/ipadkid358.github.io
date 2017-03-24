@@ -1,11 +1,9 @@
 #!/bin/bash
 
-exec > appnames.txt
+exec > appstatus.txt
 exec 2> /dev/null
-
 cd /Applications
-filecontent=( `ls .`)
-for t in "${filecontent[@]}"
+for t in `ls`
 do
 cd "$t"
 test "$(plutil -key CFBundleName Info.plist)" != "" && { echo -n "Name: "; plutil -key CFBundleName Info.plist; }
@@ -14,7 +12,6 @@ test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executab
 test "$(plutil -key CFBundleIdentifier Info.plist)" != "" && { 
 echo -n "Bundle ID: " 
 plutil -key CFBundleIdentifier Info.plist
-test "$1" = "loc" && { echo; echo -n "Core File Location: "; pwd; }
 echo -n "Status: "
 if dpkg -S $t > /dev/null
 then

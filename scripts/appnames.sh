@@ -4,8 +4,7 @@ exec > appnames.txt
 exec 2> /dev/null
 
 cd /Applications
-filecontent=( `ls .`)
-for t in "${filecontent[@]}"
+for t in `ls`
 do
 cd "$t"
 test "$(plutil -key CFBundleIcons Info.plist)" != "" && { 
@@ -27,8 +26,7 @@ cd /Applications
 done
 
 cd /var/containers/Bundle/Application
-filecontent=( `ls .`)
-for t in "${filecontent[@]}"
+for t in `ls`
 do
 cd "$t"
 cd *.app
