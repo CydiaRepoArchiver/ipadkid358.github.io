@@ -4,7 +4,7 @@ test "$1" = "id" && {
 grep "Package: " /var/lib/dpkg/status | cut -c 10- | grep -v "gsc."
 } || { 
 test "$1" = "name" && {
-grep "Name: " /var/lib/dpkg/status | cut -c 7-
+grep "Name: " /var/lib/dpkg/status | cut -c 7- | sort -u
 } || { 
 echo
 echo Please specify a name type
