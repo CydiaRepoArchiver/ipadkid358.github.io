@@ -1,0 +1,25 @@
+<package>
+	<id>com.ipadkid.notolines</id>
+	<name>NotoLines</name>
+	<version>0.0.1</version>
+	<compatibility>
+		<firmware>
+			<miniOS>10.0</miniOS>
+		</firmware>
+	</compatibility>
+	<dependencies>
+		<package>mobilesubstrate</package>
+	</dependencies>
+	<descriptionlist>
+		<description>Change the amount of lines are shown by notifications in Notification Center</description>
+	</descriptionlist>
+	<changelog>
+		<change>Initial release</change>
+	</changelog>
+	<links>
+		<link>
+			<name>ipad_kid homepage</name>
+			<url>https://ipadkid358.github.io</url>
+		</link>
+	</links>
+</package>
