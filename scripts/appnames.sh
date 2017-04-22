@@ -4,66 +4,65 @@ exec > appnames.txt 2> /dev/null
 
 test "$1" = "loc" && {
 TMP=$(mktemp)
-for t in `ls /var/mobile/Containers/Data/Application`
+ls /var/mobile/Containers/Data/Application | while read t
 do
-cd /var/mobile/Containers/Data/Application/"$t"
-plutil -key MCMMetadataIdentifier .com.apple.mobile_container_manager.metadata.plist >> $TMP
-pwd >> $TMP
+plutil -key MCMMetadataIdentifier  /var/mobile/Containers/Data/Application/"$t"/.com.apple.mobile_container_manager.metadata.plist >> $TMP
+echo /var/mobile/Containers/Data/Application/"$t" >> $TMP
 done
 }
 
-for t in `ls /Applications`
+ls /Applications | while read t
 do
-cd /Applications/"$t"
-test "$(plutil -key CFBundleIcons Info.plist)" != "" && { 
-test "$(plutil -key SBAppTags Info.plist)" = "" && { 
-test "$(plutil -key CFBundleName Info.plist)" != "" && { echo -n "Name: "; plutil -key CFBundleName Info.plist; }
-test "$(plutil -key CFBundleDisplayName Info.plist)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName Info.plist; }
-test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable Info.plist; }
-test "$(plutil -key CFBundleIdentifier Info.plist)" != "" && { 
+F=/Applications/"$t"/Info.plist
+test "$(plutil -key CFBundleIcons $F)" != "" && { 
+test "$(plutil -key SBAppTags $F)" = "" && { 
+test "$(plutil -key CFBundleName $F)" != "" && { echo -n "Name: "; plutil -key CFBundleName $F; }
+test "$(plutil -key CFBundleDisplayName $F)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName $F; }
+test "$(plutil -key CFBundleExecutable $F)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable $F; }
+test "$(plutil -key CFBundleIdentifier $F)" != "" && { 
 echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier Info.plist
+plutil -key CFBundleIdentifier $F
 test "$1" = "loc" && { 
 echo
 echo -n "Core File Location: "
-pwd
-test "$(grep -A1 $(plutil -key CFBundleIdentifier Info.plist) $TMP)" != "" && {
+echo /Applications/"$t"
+test "$(grep -A1 $(plutil -key CFBundleIdentifier $F) $TMP)" != "" && {
 echo
 echo -n "Documents location: "
-grep -A1 $(plutil -key CFBundleIdentifier Info.plist) $TMP| grep "/var/mobile/Containers/Data/Application"
+grep -x -A1 $(plutil -key CFBundleIdentifier $F) $TMP | grep "/var/mobile/Containers/Data/Application"
 }
+      }
 echo
 echo ———————
 echo
-         }
       }
    }
 }
 done
 
-for t in `ls /var/containers/Bundle/Application/`
+ls /var/containers/Bundle/Application/ | while read t
 do
-cd /var/containers/Bundle/Application/"$t"
-cd *.app
-test "$(plutil -key CFBundleName Info.plist)" != "" && { echo -n "Name: "; plutil -key CFBundleName Info.plist; }
-test "$(plutil -key CFBundleDisplayName Info.plist)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName Info.plist; }
-test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable Info.plist; }
-test "$(plutil -key CFBundleIdentifier Info.plist)" != "" && { 
+R=/var/containers/Bundle/Application/"$t"/*.app
+F=$R/Info.plist
+test "$(plutil -key CFBundleName $F)" != "" && { echo -n "Name: "; plutil -key CFBundleName $F; }
+test "$(plutil -key CFBundleDisplayName $F)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName $F; }
+test "$(plutil -key CFBundleExecutable $F)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable $F; }
+test "$(plutil -key CFBundleIdentifier $F)" != "" && { 
 echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier Info.plist
+plutil -key CFBundleIdentifier $F
 test "$1" = "loc" && { 
 echo
 echo -n "Core File Location: "
-pwd
-test "$(grep -A1 $(plutil -key CFBundleIdentifier Info.plist) $TMP)" != "" && {
+echo $R
+test "$(grep -A1 $(plutil -key CFBundleIdentifier $F) $TMP)" != "" && {
 echo
 echo -n "Documents location: "
-grep -A1 $(plutil -key CFBundleIdentifier Info.plist) $TMP| grep "/var/mobile/Containers/Data/Application"
+grep -x -A1 $(plutil -key CFBundleIdentifier $F) $TMP | grep "/var/mobile/Containers/Data/Application"
 }
+      }
 echo
 echo ———————
 echo
-   }
 }
 done
 test "$1" = "loc" && rm $TMP

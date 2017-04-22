@@ -1,11 +1,10 @@
 #!/bin/bash
 
-exec > appstatus.txt
-exec 2> /dev/null
-cd /Applications
-for t in `ls`
+exec > appstatus.txt 2> /dev/null
+
+ls /Applications | while read t
 do
-cd "$t"
+cd /Applications/"$t"
 test "$(plutil -key CFBundleName Info.plist)" != "" && { echo -n "Name: "; plutil -key CFBundleName Info.plist; }
 test "$(plutil -key CFBundleDisplayName Info.plist)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName Info.plist; }
 test "$(plutil -key CFBundleExecutable Info.plist)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable Info.plist; }
@@ -23,5 +22,4 @@ echo
 echo ———————
 echo
 }
-cd /Applications
 done

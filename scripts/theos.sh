@@ -1,3 +1,3 @@
-export THEOS=/var/theos
+export THEOS=/path/to/theos
+export THEOS_MAKE_PATH=$THEOS/makefiles
 export PATH=$THEOS/bin:$PATH
-export THEOS_MAKE_PATH=/var/theos/makefiles
