@@ -1,5 +1,8 @@
 <changelog>
-      <changes>
+		<changes>
+		<version>0.0.4~b1</version>
+		<change>Added iOS 9 support</change>
+		<changes>
 		<version>0.0.3</version>
 		<change>Re-written to be much smaller</change>
 	</changes>
