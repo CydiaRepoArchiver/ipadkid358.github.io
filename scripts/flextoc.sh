@@ -1,10 +1,8 @@
 #!/bin/bash
 
 cp "/var/mobile/Library/Application Support/Flex3/patches.plist" "/var/mobile/Documents/Flex/patches.plist"
-
 test -d Patches && rm -rf Patches
 mkdir Patches
-
 grep "downloadDate" "/var/mobile/Documents/Flex/patches.plist" -A3 | grep "<string>" | cut -c12- | cut -d "<" -f1 | while read m
 do
 r=$(echo $m | tr -dc [:alnum:])
@@ -26,4 +24,9 @@ echo "Description: This is a work in progress" >> Patches/"$r"/control
 echo "Maintainer: ipad_kid <ipadkid358@gmail.com>" >> Patches/"$r"/control
 echo "Author: Sinfool" >> Patches/"$r"/control
 echo "Section: Tweaks" >> Patches/"$r"/control
+test "$1" = "make" && {
+make -C Patches/"$r" package
+rm -r Patches/"$r"/.theos
+rm -r Patches/"$r"/obj
+}
 done
