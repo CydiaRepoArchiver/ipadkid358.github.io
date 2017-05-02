@@ -6,21 +6,21 @@ echo Please run as root to avoid errors
 test "$1" = "" && {
 echo Please rerun this script with a package id
 } || {
-test "$1" != "$(grep "Package: " /var/lib/dpkg/status | cut -c 10- | grep -v "gsc." | grep $1)" && { 
+test "$1" != "$(dpkg --get-selections | grep -v "deinstall" | grep -v "gsc." | cut -f1 | grep $1)" && { 
 echo
 tput bold
 echo Please rerun this script with a valid package id
 echo ————————————————————————
 echo You may have meant: 
 tput sgr0 
-grep "Package: " /var/lib/dpkg/status | cut -c 10- | grep -v "gsc." | sort -u | grep $1
+dpkg --get-selections | grep -v "deinstall" | grep -v "gsc." | cut -f1 | grep $1
 echo
 } || {
 test -d redebs || mkdir redebs
 cd redebs
 mkdir sandbox
 mkdir sandbox/DEBIAN
-ls /var/lib/dpkg/info | grep $1 | grep -v "$1".list | grep -v "$1".md5sums | cut -c $(($(echo -n $1 | wc -c) + 2))- | while read t
+dpkg-query --control-list $1 | grep -v "md5sums" | while read t
 do
 cp /var/lib/dpkg/info/$1.$t sandbox/DEBIAN/$t
 done
