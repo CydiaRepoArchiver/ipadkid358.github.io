@@ -1,9 +1,22 @@
 #!/bin/bash
 
+## --- Documentation and notes ---
+## This will take all of your currently installed patches and do its best to turn them into tweaks 
+## Intended to be compiled with Theos
+## Changes the S value to directory you want (NOT ONE THAT ALREADY EXISTS)
+## Don't touch the p value, this is only available for debugging purposes only
+## This is still in beta, you'll notice there are a couple TODOs around, please contact me at https://ipadkid358.github.io/contact.html if you have any recommendations 
+## Once I feel it's ready enough, I'll add a build feature to mass build all of these tweaks
+## Please use with care, thank you
+## --- End of documentation and notes ---
+
 S=Sandbox
+
+## Reminder to change above S value
+
 p="/var/mobile/Library/Application Support/Flex3/patches.plist"
 n=0
-rm -r $S
+test -d $S && echo $S exists, exiting && exit
 mkdir $S
 while ((n > -1))
 do
@@ -29,7 +42,15 @@ test "$(plutil -key patches -key $n -key units -key $f -key methodObjc -key disp
 
 test "$(plutil -key patches -key $n -key units -key $f -key methodObjc -key displayName "$p" | cut -c2-15)" = "(unsigned int)" && echo "return $(plutil -key patches -key $n -key units -key $f -key overrides -key 0 -key value -key value "$p");" >>  $S/"$r"/Tweak.xm
 
+## TODO - Fix Boolean values
+## TODO - Increase handling for multiple values
 test "$(plutil -key patches -key $n -key units -key $f -key methodObjc -key displayName patches.plist | cut -c2-7)" = "(void)" && { 
+test $(plutil -key patches -key $n -key units -key $f -key overrides -key 0 -key value -key value patches.plist 2> /dev/null) && echo "%orig($(plutil -key patches -key $n -key units -key $f -key overrides -key 0 -key value -key value patches.plist));" >>  $S/"$r"/Tweak.xm
+}
+
+## TODO - Increase handling for multiple values
+## TODO - Fix handling for nil
+test "$(plutil -key patches -key $n -key units -key $f -key methodObjc -key displayName patches.plist | cut -c2-5)" = "(id)" && { 
 test $(plutil -key patches -key $n -key units -key $f -key overrides -key 0 -key value -key value patches.plist 2> /dev/null) && echo "%orig($(plutil -key patches -key $n -key units -key $f -key overrides -key 0 -key value -key value patches.plist));" >>  $S/"$r"/Tweak.xm
 }
 
