@@ -1,6 +1,6 @@
 #!/bin/bash
 
-exec > appnames.txt 2> /dev/null
+exec > appnames2.txt 2> /dev/null
 
 test "$1" = "loc" && {
 TMP=$(mktemp)
@@ -14,14 +14,13 @@ done
 ls /Applications | while read t
 do
 F=/Applications/"$t"/Info.plist
-test "$(plutil -key CFBundleIcons $F)" != "" && { 
-test "$(plutil -key SBAppTags $F)" = "" && { 
-test "$(plutil -key CFBundleName $F)" != "" && { echo -n "Name: "; plutil -key CFBundleName $F; }
-test "$(plutil -key CFBundleDisplayName $F)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName $F; }
-test "$(plutil -key CFBundleExecutable $F)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable $F; }
-test "$(plutil -key CFBundleIdentifier $F)" != "" && { 
-echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier $F
+test "$(plutil -key CFBundleIcons $F)" && { 
+test "$(plutil -key SBAppTags $F)" || { 
+test "$(plutil -key CFBundleName $F)" && echo "Name: $(plutil -key CFBundleName $F)"
+test "$(plutil -key CFBundleDisplayName $F)" && echo "Display Name: $(plutil -key CFBundleDisplayName $F)"
+test "$(plutil -key CFBundleExecutable $F)" && echo "Executable Name: $(plutil -key CFBundleExecutable $F)"
+test "$(plutil -key CFBundleIdentifier $F)" && { 
+echo "Bundle ID: $(plutil -key CFBundleIdentifier $F)"
 test "$1" = "loc" && { 
 echo
 echo -n "Core File Location: "
@@ -44,12 +43,11 @@ ls /var/containers/Bundle/Application/ | while read t
 do
 R=/var/containers/Bundle/Application/"$t"/*.app
 F=$R/Info.plist
-test "$(plutil -key CFBundleName $F)" != "" && { echo -n "Name: "; plutil -key CFBundleName $F; }
-test "$(plutil -key CFBundleDisplayName $F)" != "" && { echo -n "Display Name: "; plutil -key CFBundleDisplayName $F; }
-test "$(plutil -key CFBundleExecutable $F)" != "" && { echo -n "Executable Name: "; plutil -key CFBundleExecutable $F; }
-test "$(plutil -key CFBundleIdentifier $F)" != "" && { 
-echo -n "Bundle ID: " 
-plutil -key CFBundleIdentifier $F
+test "$(plutil -key CFBundleName $F)" && echo "Name: $(plutil -key CFBundleName $F)"
+test "$(plutil -key CFBundleDisplayName $F)" && echo "Display Name: $(plutil -key CFBundleDisplayName $F)"
+test "$(plutil -key CFBundleExecutable $F)" && echo "Executable Name: $(plutil -key CFBundleExecutable $F)"
+test "$(plutil -key CFBundleIdentifier $F)" && { 
+echo "Bundle ID: $(plutil -key CFBundleIdentifier $F)"
 test "$1" = "loc" && { 
 echo
 echo -n "Core File Location: "
