@@ -49,14 +49,18 @@
 										<h1>Scripts</h1>
 									</header>
 									
-<p>Many of these scripts require Erica Utilities from Cydia</p>
+<p>Many of these scripts require Erica Utilities from Cydia</p><p>While some of these do, I do not intentionally validate if all the proper tools are available to use on the device</p>
 <p>Simply click the link at the beginning of each description to install</br>
 Have any questions? <a href="../contact.html">Contact me!</a></p>
-<p><a href="./appnames.sh">appnames</a> - pulls all of your apps and provides the bundle ID </br>
-When run with "loc" (short for location) the app's location will be provided, and any files the app writes to will also be provided, if there are any</br>
-ex. <code>./appnames.sh loc</code></p>
-<p><a href="./appstatus.sh">appstatus</a> - originally built as part of another project. Pulls the same information as appnames, but only for stock iOS and Cydia apps. This script will also tell you if the app is stock or from Cydia. </br>
-Warning: Takes a very long time to execute</p>
+<p><a href="./appnames.sh">appnames</a> - pulls all of your apps and provides selected information<pre><code>Usage: appnames.sh [OPTIONS]
+ OPTIONS:
+   -b       Bundle provides the bundle ID of the app
+   -l       Location provides the file path to the main folder of the app
+   -d       Documents provides the file path for any files the app writes out (this is only guaranteed for sandboxed apps)
+   -u       URL Scheme provides any valid protocols directing to the app
+   -h       Help provides this help page</code></pre>
+ex. <code>./appnames.sh -bldu</code></p>
+<p>ftt - <a href="../ftt/index.html">information on this project can be found here</a></p>
 <p><a href="./redeb.sh">redeb</a> - put debain packages back together! Just run the script followed by a package ID (package IDs can be found at the bottom of the page in Cydia) </br>
 ex. <code>./redeb.sh com.ipadkid.package</code></p>
 <p><a href="./stringgen.sh">stringgen</a> - random string generator, automatically copies to clipboard. Specify a length </br>

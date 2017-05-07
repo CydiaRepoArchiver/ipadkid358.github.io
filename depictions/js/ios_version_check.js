@@ -1,9 +1,3 @@
-/*
-I saw some parts of this code on the internet. I forgot where. If it's yours
-let me know and I'll credit you.
-*/
-
-// changed const to var for IE9/10 compatibity.
 var VERSION_CHECK_SUPPORTED = "Your iOS version is supported! &#x1f60a;";
 var VERSION_CHECK_NEEDS_UPGRADE = "Requires at least iOS %s &#x1f615;";
 var VERSION_CHECK_UNCONFIRMED = "Not yet tested on iOS %s &#x1f601;";
@@ -23,7 +17,6 @@ function ios_version_check(minIOS,maxIOS,otherIOS,callBack) {
 	}
 
 	function compareVersions(one, two) {
-		// https://gist.github.com/TheDistantSea/8021359
 		for (var i = 0; i < one.length; ++i) {
 			if (two.length == i) {
 				return 1;
