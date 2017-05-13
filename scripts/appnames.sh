@@ -28,6 +28,7 @@ echo "   -b       Bundle provides the bundle ID of the app"
 echo "   -l       Location provides the file path to the main folder of the app"
 echo "   -d       Documents provides the file path for any files the app writes out (this is only guaranteed for sandboxed apps)"
 echo "   -u       URL Scheme provides any valid protocols directing to the app"
+echo "   -h       Help provides this help page"
 echo
 exit
 ;;

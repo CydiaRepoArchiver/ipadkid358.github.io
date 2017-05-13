@@ -50,17 +50,21 @@
 									</header>
 									
 <p>FTT is short for Flex to Theos. This bash script does its best to do exactly that, turn Flex patches into full Theos projects</p>
-<p><strong>This project it temporarily on hold due to concerns from the community</strong></br>Please <a href="../contact.html">contact me</a> if you have any questions</p>
-<h4>Current TODOs:</h4>
+<h4>Known issues:</h4>
 <ul>
-<li>Add multiple argument handling for void and id</li>
-<li>Fix nil handling</li>
-<li>More id handling fixes</li>
+<li>UIColors and other values that can be passed to id may not work properly</li>
+<li>Patches labeled as systemwide by Flex may not work properly</li>
+<li>init methods (has a + prefix) may not work properly</li>
 </ul>
-<p>Latest version is available here: <a href="./ftt3.sh">Version 3</a><ul>
+<p>Latest version is available here: <a href="./ftt4.sh">Version 4</a><ul>
+<li>Full void handling</li>
+<li>Handling for id mostly handled</li>
+<li>Way faster, IA</li>
+</ul></p>
+<p>Older versions: <a href="./ftt3.sh">Version 3</a><ul>
 <li>Addressed TODO regarding Description field of control file</li>
 <li>Fixed compile error with primary arguments</li>
-</ul>
+</ul></p>
 
 <p>Older versions: <a href="./ftt2.sh">Version 2</a><ul>
 <li>Fixed bools always returning true</li>
