@@ -12,12 +12,6 @@ echo "Size: $(stat -c %s $p)" >> Packages
 echo >> Packages
 done
 bzip2 -z Packages
-cd /var/mobile/ipadkid358
 git add --all
-test "$1" = "" && {
-git commit -m "Update"
-}
-test "$1" != "" && {
-git commit -m "$1"
-}
-git push
+test "$1" = "" && git commit -m "Update" || git commit -m "$1"
+sudo git push
