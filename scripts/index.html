@@ -52,13 +52,12 @@
 <p>Many of these scripts require Erica Utilities from Cydia</p><p>While some of these do, I do not intentionally validate if all the proper tools are available to use on the device</p>
 <p>Simply click the link at the beginning of each description to install</br>
 Have any questions? <a href="../contact.html">Contact me!</a></p>
-<p><a href="./appnames.sh">appnames</a> - pulls all of your apps and provides selected information<pre><code>Usage: appnames.sh [OPTIONS]
+<p><a href="./appnames">appnames</a> - pulls all of your apps and provides selected information - <a href="https://github.com/ipadkid358/appnames">open source on GitHub</a><pre><code>Usage: ./appnames [OPTIONS]
  OPTIONS:
    -b       Bundle provides the bundle ID of the app
    -l       Location provides the file path to the main folder of the app
-   -d       Documents provides the file path for any files the app writes out (this is only guaranteed for sandboxed apps)
-   -u       URL Scheme provides any valid protocols directing to the app
-   -h       Help provides this help page</code></pre>
+   -d       Documents provides the file path for any files the app writes to (this is only guaranteed for sandboxed apps)
+   -u       URL Scheme provides any valid protocols directing to the app</code></pre>
 ex. <code>./appnames.sh -bldu</code></p>
 <p><a href="./ftt">ftt</a> - short for Flex to Theos, this does its best to do exactly that- turn Flex patches into full Theos projects </br><a href="../ftt/index.html">Archived information</a> on this project can be found here and it's <a href="https://github.com/ipadkid358/FlexToTheos">open source on GitHub</a><pre><code>Usage: ./ftt [OPTIONS]
     Options: 
@@ -75,7 +74,7 @@ ex. <code>./package.sh debs</code></p>
 ex. <code>./redeb.sh com.ipadkid.package</code></p>
 <p><a href="./stringgen.sh">stringgen</a> - random string generator, automatically copies to clipboard. Specify a length </br>
 ex. <code>./stringgen.sh 12</code></p>
-<p><a href="./teamid.sh">teamid</a> - intended for iOS 10 to easily pull their team id to be used with Cydia Extender Installer. Requires Yalu102 to be installed with the Apple ID you intend to use. Can be used directly with cyextender using the pipe function </br>
+<p><a href="./teamid.sh">teamid</a> - intended for Yalu102 users to easily pull their Team ID to be used with Cydia Extender Installer. Requires Yalu102 to be installed with the Apple ID you intend to use. Can be used directly with cyextender using the pipe function </br>
 ex. <code>./teamid.sh | cyextender</code></p>
 <p><a href="./theos.sh">theos.sh</a> - this is not a script that is intended to be run. It is a structure file to help use Theos. Please place the file in <code>/etc/profile.d/</code> and change the path after the equals to where you have placed Theos. </br>Example of file: <code>export THEOS=/var/theos</code></p>
 
