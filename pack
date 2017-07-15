@@ -13,5 +13,5 @@ echo >> Packages
 done
 bzip2 -z Packages
 git add --all
-test "$1" = "" && git commit -m "Update" || git commit -m "$1"
-sudo git push
+test "$1" = "" && git commit -m Update || git commit -m "$1"
+git push

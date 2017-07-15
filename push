@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd /var/mobile/ipadkid358
-git add --all
-test "$1" = "" && git commit -m "Update" || git commit -m "$1"
-sudo git push
