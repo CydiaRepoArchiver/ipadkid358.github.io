@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /clash.html
-Disallow: /savetheanimals/*
-Disallow: /template.html
