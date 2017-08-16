@@ -1,1 +1,0 @@
-Former Cydia Repo and Homepage. Now on http://ipadkid.cf/ 
